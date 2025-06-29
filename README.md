@@ -2,86 +2,100 @@
   <img src="assets/logo.png">
 </p>
 
-## <p align="center"><b><a href="README.md">English</a> | <a href="README_CN.md">简体中文</a></b></p>
+## <p align="center"><b><a href="README.md">简体中文</a> | <a href="README_EN.md">English</a></b></p>
 
-# Introduction
-Browser fingerprinting refers to the process of identifying and recording various factors, such as the browser itself, the operating system, and hardware configurations, to generate a unique identifier. It is a digital signature obtained through the collection of various features of the browser, such as user agent, language, screen size, plugin version, font, time settings, etc., and a comprehensive analysis. As everyone's browser configurations differ, browser fingerprints can be used to track user behavior, identify identity, monitor online activities, and even for illegal purposes such as fraud and phishing.
+# 简介
 
-VirtualBrowser is a fingerprint browser based on [Chromium](https://dev.chromium.org), which supports Windows 10 and above operating systems, and plans to support Mac, Android, Linux, and other operating systems in the future.
+VirtualBrowser 是基于 [Chromium](https://dev.chromium.org) 的指纹浏览器，支持 Windows 7 及以上操作系统，并计划在未来支持 Mac、Android、Linux 等操作系统。
 
-Compared with Chromium, VirtualBrowser has two advantages:
+浏览器指纹识别是指通过识别和记录浏览器本身、操作系统和硬件配置等各种因素，生成一个唯一的标识符的过程。它是通过收集浏览器的各种特征（如用户代理、语言、屏幕大小、插件版本、字体、时间设置等）和综合分析得出的数字签名。由于每个人的浏览器配置不同，所以可以使用浏览器指纹来跟踪用户行为、识别身份、监视在线活动，甚至用于非法目的，如欺诈和网络钓鱼。
 
-1. Support for creating multiple fingerprint information browser environments on one machine.
-2. Support for managing multiple browser environments.
+与 Chromium 相比，VirtualBrowser 具有两个优点：
 
-# Preparation
-First, download the latest VirtualBrowser installation package from the [release page]() or [official website](http://virtualbrowser.cc) and install it on your computer.
+1. 支持在一台机器上创建多个指纹信息浏览器环境。
+2. 支持管理多个浏览器环境。
 
-## Creating a new browser environment
-1. Open VirtualBrowser and select Create Browser.
-![Image text](https://github.com/Virtual-Browser/VirtualBrowser/blob/main/assets/welcome.png)
-2. Modify the configuration information in the pop-up dialog or use the default settings. 
-![Image text](https://github.com/Virtual-Browser/VirtualBrowser/blob/main/assets/create.png)
-![Image text](https://github.com/Virtual-Browser/VirtualBrowser/blob/main/assets/createsuccess.png)
+# 准备工作
 
-## Starting the browser environment
-1. Click the Start button in the created environment to open the newly created browser environment.
-2. The newly started browser is the new fingerprint environment.
-![Image text](https://github.com/Virtual-Browser/VirtualBrowser/blob/main/assets/launch.png)
+首先，从[发布页面]()或[官网](http://virtualbrowser.cc)下载最新的 VirtualBrowser 安装包并将其安装到计算机上。
 
-# Tested and Effective Fingerprint Modifications
-You can test fingerprint modifications using [fingerprintjs](https://fingerprintjs.github.io/fingerprintjs/) and [browserleaks](https://browserleaks.com/).
+## 创建新的浏览器环境
 
-- Operating System: Modify the operating system part in `userAgent`.
-- Browser version: Modify the browser version in `userAgent`.
-- Proxy settings: Modify the browser proxy which supports "Default", "Do not use proxy", "Custom".
-- User Agent: Modify `userAgent`.
-- Language: Modify `navigator.language`, `navigator.languages`, and it can be automatically matched based on IP.
-- Time zone: Modify the time zone in `new Date()`, and it can be automatically matched based on IP.
+1. 打开 VirtualBrowser 并选择“创建浏览器”。
+   ![Image text](https://github.com/Virtual-Browser/VirtualBrowser/blob/main/assets/welcome_zh-cn.png)
+2. 修改弹出对话框中的配置信息或使用默认设置。
+   ![Image text](https://github.com/Virtual-Browser/VirtualBrowser/blob/main/assets/create_zh-cn.png)
+   ![Image text](https://github.com/Virtual-Browser/VirtualBrowser/blob/main/assets/create_success_zh-cn.png)
+
+## 启动浏览器环境
+
+1. 单击已创建环境中的“启动”按钮，以打开新创建的浏览器环境。
+2. 新启动的浏览器即为新的指纹环境。
+   ![Image text](https://github.com/Virtual-Browser/VirtualBrowser/blob/main/assets/launch.png)
+
+# 亲测可用的指纹修改
+
+可以使用 [fingerprintjs](https://fingerprintjs.github.io/fingerprintjs/) 和 [browserleaks](https://browserleaks.com/) 来测试指纹修改效果。
+
+- 操作系统：修改 `userAgent` 中的操作系统部分。
+- 浏览器版本：修改 `userAgent` 中的浏览器版本。
+- 代理设置：修改支持“默认”、“不使用代理”、“自定义”的浏览器代理。
+- 用户代理：修改 `userAgent`。
+- 语言：修改 `navigator.language`、`navigator.languages`，也可以根据 IP 自动匹配。
+- 时区：修改 `new Date()` 中的时区，也可以根据 IP 自动匹配。
 - WebRTC
-- Geolocation: Modify the latitude and longitude in `navigator.geolocation.getCurrentPosition()`, and it can be automatically matched based on IP.
-- Resolution: Modify `screen.width`/`screen.height`.
-- Font: Randomly modify the supported font list.
-- Canvas: Randomly modify Canvas 2D drawing differential pixels.
-- WebGL image: Randomly modify WebGL drawing differential pixels.
-- WebGL metadata: WebGL vendor, WebGL rendering, etc.
-- AudioContext: Randomly modify the differential data of `getChannelData` and `getFloatFrequencyData` in AudioContext.
+- 地理位置：修改 `navigator.geolocation.getCurrentPosition()` 中的经度和纬度，也可以根据 IP 自动匹配。
+- 分辨率：修改 `screen.width`/`screen.height`。
+- 字体：随机修改支持的字体列表。
+- Canvas：随机修改 Canvas 2D 绘制差分像素。
+- WebGL 图像：随机修改 WebGL 绘制差分像素。
+- WebGL 元数据：WebGL 厂商、WebGL 渲染等。
+- AudioContext：随机修改 AudioContext 中的 `getChannelData` 和 `getFloatFrequencyData` 的差异数据。
 - ClientRects
-- Speech voices
-- CPU: Modify `navigator.hardwareConcurrency` CPU core count.
-- Memory
-- Device name
-- MAC address
+- Speech Voices
+- CPU：修改 `navigator.hardwareConcurrency` 的 CPU 核心数。
+- 内存
+- 设备名称
+- MAC 地址
 - Do Not Track
 - SSL
-- Port scan protection
-- Hardware acceleration
-# Automation
-VirtualBrowser is base on Chromium, you can use playwright or other tools.
-demo(https://github.com/Virtual-Browser/VirtualBrowser/tree/main/automation)
+- 端口扫描保护
+- 硬件加速
 
-# Support and Joining
-VirtualBrowser is not perfect yet. If you are interested in VirtualBrowser, you are welcome to join us through the following ways:
+# 自动化
 
-1. Directly contribute code, provide features, and fix bugs.
-2. Install VirtualBrowser, visit your frequently used websites, and provide feedback on unusable situations to help solve compatibility issues.
-3. Provide experience, functional suggestions to help improve VirtualBrowser.
+VirtualBrowser 基于 Chromium 开发，可以使用 playwright 或者其他 chromium 的自动化测试工具进行开发。 demo(https://github.com/Virtual-Browser/VirtualBrowser/tree/main/automation)
 
-# Disclaimer
-The purpose of this disclaimer is to explicitly clarify that the VirtualBrowser project is for technology exchange, learning, and research purposes and that the technology of this project should not be used for any illicit purposes or destructive behaviors. The author is not responsible for any damage caused to others or systems by the use of this project.
-When using this project, you must be clear and promise not to utilize this technology to carry out illegal activities, infringe upon the rights of others, or attack systems. Any accidents, losses, or damages resulting from the use of the technologies in this project, including but not limited to data loss, property loss, legal liabilities, etc., are not related to the author of this project.
-The technical information provided in this text is for learning and reference purposes only and does not constitute any form of warranty or guarantee. The author of this project makes no representations or warranties as to the accuracy, validity, or applicability of the technology.
+# 支持和加入
 
-# Contact Us
-- Email: [virtual.browser.2020@gmail.com](mailto:virtual.browser.2020@gmail.com)
-- Official website: [http://virtualbrowser.cc](http://virtualbrowser.cc)
-- QQ Group: `564142956`
+VirtualBrowser 还不完善。如果您对 VirtualBrowser 感兴趣，可以通过以下方式加入我们：
+
+1. 直接贡献代码、提供功能和修复错误。
+2. 安装 VirtualBrowser，访问您经常使用的网站，并提供有关无法使用的情况的反馈，以帮助解
+3. 提供有关 VirtualBrowser 的反馈和建议，以帮助我们改进产品和增强用户体验。
+4. 在社交媒体上分享您对 VirtualBrowser 的看法和使用体验，并向其他人推荐该产品。
+5. 加入 VirtualBrowser 的开发者社区，与其他用户和开发人员进行交流和讨论。
+
+# 免责声明
+
+本免责声明旨在明确指出，VirtualBrowser 项目为技术交流、学习和研究之用，不得将本项目技术用于任何非法目的或破坏行为。作者对于任何使用本项目对他人或系统造成的损害概不负责。
+
+使用本项目时，您必须明确并承诺，不会利用该技术来实施非法活动、侵犯他人的权益或对系统进行攻击。任何使用本项目中的技术所导致的任何意外、损失或损害，包括但不限于数据损失、财产损失、法律责任等问题，都与发表本项目的作者无关。
+
+本文提供的技术信息仅供学习和参考之用，不构成任何形式的担保或保证。发表本项目的作者不对技术的准确性、有效性或适用性做任何声明或保证。
+
+# 联系我们
+
+- email: [virtual.browser.2020@gmail.com](mailto:virtual.browser.2020@gmail.com)
+- 官网: [http://virtualbrowser.cc](http://virtualbrowser.cc)
+- QQ 群: `564142956`
 
 ![Join QQ Group](assets/VirtualBrowser-qq-group.png)
-Wechat Group:
+微信群：
 ![Join Wechat Group](assets/WeChat.png)
 
-# Acknowledgments
+# 致谢
+
 1. [fingerprintjs](https://fingerprintjs.github.io/fingerprintjs/)
 2. [browserleaks](https://browserleaks.com/)
 3. [Chromium](https://dev.chromium.org)
